@@ -12,7 +12,7 @@ var RegisterRoutes = func (r *mux.Router)  {
     r.HandleFunc("/products", controllers.GetAllProducts).Methods("GET")
     r.HandleFunc("/products/{id}", controllers.GetProductByID).Methods("GET")
     // r.HandleFunc("/products/{id}", controllers.UpdateProduct).Methods("PUT")
-    // r.HandleFunc("/products/{id}", controllers.DeleteProduct).Methods("DELETE")
+    r.HandleFunc("/products/{id}", controllers.DeleteProduct).Methods("DELETE")
 
 	
 }

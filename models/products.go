@@ -39,3 +39,8 @@ func GetByID(id int64) (*Product, *gorm.DB){
 	db := db.Where("ID=?",id).Find(&getItem)
 	return &getItem,db
 }
+func DeleteByID(id int64) Product{
+	var getItem Product
+	db.Where("ID=?",id).Delete(getItem)
+	return getItem
+}
