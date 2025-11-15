@@ -57,8 +57,8 @@ func DeleteProduct(w http.ResponseWriter, r *http.Request){
 	 if err != nil{
 		fmt.Println("error while parsing")
 	}
-	productDetails := models.DeleteByID(Id)
-	res, _ := json.Marshal(productDetails)
+	productD := models.DeleteByID(Id)
+	res, _ := json.Marshal(productD)
 	w.Header().Set("Content-Type","application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
