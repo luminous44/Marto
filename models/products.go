@@ -20,6 +20,7 @@ func init(){
 	 config.Connection()
 	 db = config.GetDB()	
 	 db.AutoMigrate(Product{}) 
+	 db.AutoMigrate(User{})
 }
 
 func CreateNewProduct(p *Product) *Product{

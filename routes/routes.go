@@ -7,6 +7,8 @@ import (
 
 var RegisterRoutes = func (r *mux.Router)  {
 
+	// product router
+
 	r.HandleFunc("/health", controllers.HealthCheck ).Methods("GET")
 	r.HandleFunc("/products", controllers.CreateProduct).Methods("POST")
     r.HandleFunc("/products", controllers.GetAllProducts).Methods("GET")
@@ -14,5 +16,7 @@ var RegisterRoutes = func (r *mux.Router)  {
     //r.HandleFunc("/products/{id}", controllers.UpdateProduct).Methods("PUT")
     r.HandleFunc("/products/{id}", controllers.DeleteProduct).Methods("DELETE")
 
-	
+	// user router
+    r.HandleFunc("/register", controllers.Register).Methods("POST")
+	r.HandleFunc("/login", controllers.Login).Methods("POST")
 }
